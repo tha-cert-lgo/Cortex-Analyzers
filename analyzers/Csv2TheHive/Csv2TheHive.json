@@ -1,0 +1,34 @@
+{
+  "name": "Csv_2_TheHive",
+  "version": "1.0",
+  "author": "Lenaic GOUDOUT",
+  "url": "https://github.com/cyberpescadito/Cortex-Analyzers/tree/master/analyzers/Csv2TheHive",
+  "license": "-",
+  "description": "Import csv file content has observables nor tags.",
+  "dataTypeList": ["file"],
+  "command": "Csv2TheHive/csv2thehive.py",
+  "baseConfig": "Csv2TheHive",
+  "configurationItems": [
+    {
+        "name": "mail_mapping",
+        "description": "Used to map csv column name to 'mail' data type (case non-sensitive). Eg: e-mail",
+        "type": "string",
+        "multi": true,
+        "required": false
+    },
+    {
+        "name": "username_mapping",
+        "description": "Used to map csv column name to 'username' data type (case non-sensitive). Eg: login",
+        "type": "string",
+        "multi": true,
+        "required": false
+    },
+    {
+        "name": "to_sanitize",
+        "description": "Used to sanitize data with correponding column name (case non-sensitive). Keep 2 firsts char in clear, followed by '*'. Eg: password",
+        "type": "string",
+        "multi": true,
+        "required": false
+    }
+  ]
+}

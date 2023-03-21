@@ -1,0 +1,27 @@
+{
+  "name": "Leak_File_Hash",
+  "version": "1.0",
+  "author": "THA-CERT //LGO",
+  "url": "",
+  "license": "-",
+  "description": "Detect all unique domains name in provided file and calculate sha256 hash of it.",
+  "dataTypeList": ["file"],
+  "command": "LeakFileHash/leak_file_hash.py",
+  "baseConfig": "LeakFileHash",
+  "configurationItems": [
+    {
+        "name": "file_extensions",
+        "description": "Files' extentions to exclude from domain name regular expression matching. EG: 'zip'.",
+        "type": "string",
+        "multi": true,
+        "required": false
+    },
+    {
+        "name": "API_key",
+        "description": "Specify here the API key to access TheHive instance. (Optional: if not set, less data will be sent back)",
+        "type": "string",
+        "multi": false,
+        "required": false
+    }
+  ]
+}

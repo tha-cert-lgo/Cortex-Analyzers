@@ -1,0 +1,55 @@
+{
+  "name": "OVH_Domain_Order",
+  "version": "1.0",
+  "author": "THA-CERT //LGO",
+  "url": "",
+  "license": "-",
+  "description": "Buy an available domain name on OVH Cloud.",
+  "dataTypeList": ["thehive:case_artifact"],
+  "command": "Ovh/ovh_domain_order.py",
+  "baseConfig": "OvhDomainOrder",
+  "configurationItems": [
+    {
+        "name": "API_ak",
+        "description": "Specify here the Application key of your OVH account.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "API_as",
+        "description": "Specify here the Application secret of your OVH account.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "API_cs",
+        "description": "Specify here the Consumer secret of your OVH account.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "price_limit",
+        "description": "Price limit allowed to buy one domain name, in euros. Default is 20 euros.",
+        "type": "number",
+        "multi": false,
+        "required": false
+    },
+    {
+        "name": "required_configuration",
+        "description": "Set required confirguration values needed by OVH, in order to be able to finalize the order. More info: https://docs.ovh.com/fr/domains/api-order/#recuperation-des-configurations-requises. Format: 'LABEL:VALUE', EG: 'OWNER_CONTACT:/me/contact/1234'",
+        "type": "string",
+        "multi": true,
+        "required": false
+    },
+    {
+        "name": "domain_redirection",
+        "description": "Set URL to redirect to, after acquiring the current domain name (optional). EG: 'https://www.myhomepage.com'",
+        "type": "string",
+        "multi": false,
+        "required": false
+    }
+  ]
+}

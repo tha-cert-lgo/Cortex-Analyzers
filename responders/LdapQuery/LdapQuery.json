@@ -1,0 +1,97 @@
+{
+  "name": "Ldap_Query",
+  "version": "2.1",
+  "author": "Florian Perret @cyber_pescadito, modified by Lenaic GOUDOUT",
+  "url": "https://github.com/cyberpescadito/Cortex-Analyzers/tree/master/responders/LdapQuery",
+  "license": "AGPL-V3",
+  "description": "Query your LDAP server to harvest informations about an user of your organization",
+  "dataTypeList": ["thehive:case"],
+  "command": "LdapQuery/ldapQuery.py",
+  "baseConfig": "LdapQuery",
+  "configurationItems": [
+    {
+        "name": "LDAP_address",
+        "description": "Should contain the protocol. Eg: ldaps://myldap.myorg.com",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "LDAP_port",
+        "description": "Should contain the ldap port. Eg: 389 or 636",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "LDAP_username",
+        "description": "Username of the account that will be used to bind to LDAP server. The Account should have permissions to read ldap objects and attributes.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "LDAP_password",
+        "description": "Password of the account used to bind to LDAP server.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "base_DN",
+        "description": "The base DN to use in your LDAP. Eg: dc=myorg,dc=com",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "mail_search_field",
+        "description": "Specify here the field to use when searching by mail. Eg: mail or secondMail",
+        "type": "string",
+        "multi": true,
+        "required": true
+    },
+    {
+        "name": "mail_search_filter",
+        "description": "Mail domain name to process on LDAP server when searching by mail (other email address will be ignored). Eg: domain.org",
+        "type": "string",
+        "multi": true,
+        "required": true
+    },
+    {
+        "name": "uid_search_field",
+        "description": "Specify here the field to use when searching by username. Eg: uid or sAMAccountName",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "uid_search_filter",
+        "description": "Regular expression matching uid to process on LDAP server when searching by uid (other uid will be ignored). Eg: ^[0-9]{8}$",
+        "type": "string",
+        "multi": true,
+        "required": false
+    },
+    {
+        "name": "attributes",
+        "description": "Specify here the attributes you want to harvest. Optionally add a personalized display name to the attribute, using ':' separator (attribute need to respect case sensivity). Eg: uid | uid:username",
+        "type": "string",
+        "multi": true,
+        "required": true
+    },
+    {
+        "name": "API_url",
+        "description": "Specify here the API url. Eg: https://domain.api.com",
+        "type": "string",
+        "multi": false,
+        "required": true
+    },
+    {
+        "name": "API_key",
+        "description": "Specify here the API key to access TheHive instance.",
+        "type": "string",
+        "multi": false,
+        "required": true
+    }
+  ]
+}
