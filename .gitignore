@@ -1,3 +1,8 @@
+# Repository specific
+*.bak
+responders/MailerLeak/
+responders/Ovh/ovh/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
